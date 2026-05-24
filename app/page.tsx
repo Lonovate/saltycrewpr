@@ -8,8 +8,19 @@ import { Testimonials } from "./components/Testimonials";
 import { SocialFeed } from "./components/SocialFeed";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { UnderConstruction } from "./components/UnderConstruction";
+
+const UNDER_CONSTRUCTION = true;
 
 export default function Home() {
+  if (UNDER_CONSTRUCTION) {
+    return (
+      <div className="min-h-screen bg-deep-ocean">
+        <UnderConstruction />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
