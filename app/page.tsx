@@ -10,7 +10,7 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { UnderConstruction } from "./components/UnderConstruction";
 
-const UNDER_CONSTRUCTION = true;
+const UNDER_CONSTRUCTION = false;
 
 export default function Home() {
   if (UNDER_CONSTRUCTION) {

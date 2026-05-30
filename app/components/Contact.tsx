@@ -84,7 +84,7 @@ export function Contact() {
       errors[field] ? "border-red-400" : "border-gray-200"
     } focus:border-soft-gold focus:ring-2 focus:ring-soft-gold/20 outline-none transition-all`;
 
-  const routeValues = ["icacos", "culebra", "vieques", "sunset", "private"];
+  const routeValues = ["icacos", "culebra", "vieques", "sunset", "private", "palomino"];
   const routeOptions = routeValues.map((value, i) => ({
     value,
     label: t.routes.items[i].name,
@@ -312,10 +312,8 @@ export function Contact() {
                   className={inputClass("groupSize")}
                 >
                   <option value="">{f.selectSize}</option>
-                  <option value="0-4">0-4</option>
-                  <option value="4-6">4-6</option>
-                  <option value="6-12">6-12</option>
-                  <option value="12+">12+</option>
+                  <option value="0-6">{f.sizeSmall}</option>
+                  <option value="6+">{f.sizeLarge}</option>
                 </select>
                 {errors.groupSize && (
                   <p className="text-red-500 text-sm mt-1">

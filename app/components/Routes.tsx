@@ -11,6 +11,7 @@ const routeImages = [
   "https://images.unsplash.com/photo-1600582910964-5b7c109e6868?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHx0cm9waWNhbCUyMGlzbGFuZCUyMGJlYWNoJTIwdHVycXVvaXNlJTIwd2F0ZXIlMjBhZXJpYWx8ZW58MXx8fHwxNzc4Nzk3NzQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
   "https://images.unsplash.com/photo-1674915849034-9c0ae798eb89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxzdW5zZXQlMjBvY2VhbiUyMGJvYXQlMjBsdXh1cnklMjB0cmF2ZWx8ZW58MXx8fHwxNzc4Nzk3NzQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
   "https://images.unsplash.com/photo-1619118986411-29b465253365?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHx0cm9waWNhbCUyMGlzbGFuZCUyMGJlYWNoJTIwdHVycXVvaXNlJTIwd2F0ZXIlMjBhZXJpYWx8ZW58MXx8fHwxNzc4Nzk3NzQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
 ];
 
 export function Routes() {

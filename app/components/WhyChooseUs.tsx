@@ -1,10 +1,10 @@
 "use client";
 
-import { Users, Award, MapPin, Shield } from "lucide-react";
+import { Users, Award, BadgeCheck, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "../lib/i18n";
 
-const icons = [Users, Award, MapPin, Shield];
+const icons = [Users, Award, BadgeCheck, Shield];
 
 export function WhyChooseUs() {
   const { t } = useTranslation();

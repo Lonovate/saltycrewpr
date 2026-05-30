@@ -1,13 +1,17 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-});
+function createTransporter() {
+  return nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
+}
 
 export async function POST(request: Request) {
   try {
@@ -147,6 +151,7 @@ export async function POST(request: Request) {
     }
 
     // Send both emails in parallel
+    const transporter = createTransporter();
     await Promise.all([
       // Notification to business owner
       transporter.sendMail({

@@ -44,6 +44,11 @@ export const translations = {
           description:
             "Customized luxury journey through Puerto Rico's hidden gems.",
         },
+        {
+          name: "Palomino",
+          description:
+            "Ride the river to the sea through lush tropical landscapes.",
+        },
       ],
     },
     whyChooseUs: {
@@ -61,9 +66,9 @@ export const translations = {
             "Luxury amenities and personalized attention to every detail.",
         },
         {
-          title: "Tropical Destinations",
+          title: "Licensed Captain",
           description:
-            "Access to Puerto Rico's most stunning and exclusive locations.",
+            "Our captain holds a certified license, ensuring professional and safe navigation.",
         },
         {
           title: "Safe & Comfortable",
@@ -135,6 +140,8 @@ export const translations = {
         methodSMS: "SMS/Text Message",
         groupSize: "Group Size",
         selectSize: "Select group size",
+        sizeSmall: "0 to 6",
+        sizeLarge: "6+",
         message: "Message (optional)",
         submit: "Request Your Experience",
         sending: "Sending...",
@@ -202,6 +209,11 @@ export const translations = {
           description:
             "Viaje de lujo personalizado por las joyas escondidas de Puerto Rico.",
         },
+        {
+          name: "Palomino",
+          description:
+            "Navega el río hasta el mar a través de exuberantes paisajes tropicales.",
+        },
       ],
     },
     whyChooseUs: {
@@ -219,9 +231,9 @@ export const translations = {
             "Amenidades de lujo y atenci\u00f3n personalizada a cada detalle.",
         },
         {
-          title: "Destinos Tropicales",
+          title: "Capitán con Licencia",
           description:
-            "Acceso a las ubicaciones m\u00e1s impresionantes y exclusivas de Puerto Rico.",
+            "Nuestro capitán cuenta con licencia certificada, garantizando una navegación profesional y segura.",
         },
         {
           title: "Seguro y C\u00f3modo",
@@ -294,8 +306,10 @@ export const translations = {
         methodPhone: "Llamada Telef\u00f3nica",
         methodWhatsApp: "WhatsApp",
         methodSMS: "SMS/Mensaje de Texto",
-        groupSize: "Tama\u00f1o del Grupo",
-        selectSize: "Selecciona tama\u00f1o del grupo",
+        groupSize: "Tamaño del Grupo",
+        selectSize: "Selecciona tamaño del grupo",
+        sizeSmall: "0 a 6",
+        sizeLarge: "6+",
         message: "Mensaje (opcional)",
         submit: "Solicita Tu Experiencia",
         sending: "Enviando...",
