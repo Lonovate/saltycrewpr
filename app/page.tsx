@@ -29,7 +29,7 @@ export default function Home() {
       <WhyChooseUs />
       <Gallery />
       <History />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <SocialFeed />
       <Contact />
       <Footer />
