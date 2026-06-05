@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "../lib/i18n";
+import { RouteModal } from "./RouteModal";
 
 const routeImages = [
   "https://images.unsplash.com/photo-1504681869696-d977211a5f4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHx0cm9waWNhbCUyMGlzbGFuZCUyMGJlYWNoJTIwdHVycXVvaXNlJTIwd2F0ZXIlMjBhZXJpYWx8ZW58MXx8fHwxNzc4Nzk3NzQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -14,8 +15,24 @@ const routeImages = [
   "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
 ];
 
+type RouteItem = {
+  name: string;
+  description: string;
+  image: string;
+  packages: {
+    name: string;
+    duration: string;
+    guests: string;
+    price: string;
+    bookingKey: string;
+    description: string;
+    includes: string[];
+  }[];
+};
+
 export function Routes() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedRoute, setSelectedRoute] = useState<RouteItem | null>(null);
   const { t } = useTranslation();
 
   const nextSlide = () =>
@@ -29,94 +46,118 @@ export function Routes() {
     const visible = [];
     for (let i = 0; i < 3; i++) {
       const idx = (currentIndex + i) % t.routes.items.length;
-      visible.push({ ...t.routes.items[idx], image: routeImages[idx] });
+      visible.push({
+        ...t.routes.items[idx],
+        image: routeImages[idx],
+      } as RouteItem);
     }
     return visible;
   };
 
-  return (
-    <section
-      id="routes"
-      className="py-20 md:py-32 bg-gradient-to-b from-white to-gray-50"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ocean-blue mb-4">
-            {t.routes.title}
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            {t.routes.subtitle}
-          </p>
-        </motion.div>
+  const handleExplore = (route: RouteItem) => {
+    setSelectedRoute(route);
+  };
 
-        <div className="relative">
-          <div className="hidden md:grid md:grid-cols-3 gap-8">
-            {getVisibleRoutes().map((route, i) => (
-              <RouteCard
-                key={`${currentIndex}-${i}`}
-                route={route}
-                exploreLabel={t.routes.explore}
+  return (
+    <>
+      <section
+        id="routes"
+        className="py-20 md:py-32 bg-gradient-to-b from-white to-gray-50"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ocean-blue mb-4">
+              {t.routes.title}
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+              {t.routes.subtitle}
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            <div className="hidden md:grid md:grid-cols-3 gap-8">
+              {getVisibleRoutes().map((route, i) => (
+                <RouteCard
+                  key={`${currentIndex}-${i}`}
+                  route={route}
+                  exploreLabel={t.routes.explore}
+                  onExplore={() => handleExplore(route)}
+                />
+              ))}
+            </div>
+
+            <div className="md:hidden">
+              {(() => {
+                const mobileRoute = {
+                  ...t.routes.items[currentIndex],
+                  image: routeImages[currentIndex],
+                } as RouteItem;
+                return (
+                  <RouteCard
+                    route={mobileRoute}
+                    exploreLabel={t.routes.explore}
+                    onExplore={() => handleExplore(mobileRoute)}
+                  />
+                );
+              })()}
+            </div>
+
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10"
+              aria-label="Previous route"
+            >
+              <ChevronLeft className="w-6 h-6 text-ocean-blue" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10"
+              aria-label="Next route"
+            >
+              <ChevronRight className="w-6 h-6 text-ocean-blue" />
+            </button>
+          </div>
+
+          <div className="flex justify-center mt-8 space-x-2">
+            {t.routes.items.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === currentIndex
+                    ? "bg-soft-gold w-8"
+                    : "bg-gray-300 w-2"
+                }`}
+                aria-label={`Go to route ${index + 1}`}
               />
             ))}
           </div>
-
-          <div className="md:hidden">
-            <RouteCard
-              route={{
-                ...t.routes.items[currentIndex],
-                image: routeImages[currentIndex],
-              }}
-              exploreLabel={t.routes.explore}
-            />
-          </div>
-
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10"
-            aria-label="Previous route"
-          >
-            <ChevronLeft className="w-6 h-6 text-ocean-blue" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors z-10"
-            aria-label="Next route"
-          >
-            <ChevronRight className="w-6 h-6 text-ocean-blue" />
-          </button>
         </div>
+      </section>
 
-        <div className="flex justify-center mt-8 space-x-2">
-          {t.routes.items.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2 rounded-full transition-all ${
-                index === currentIndex
-                  ? "bg-soft-gold w-8"
-                  : "bg-gray-300 w-2"
-              }`}
-              aria-label={`Go to route ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+      <RouteModal
+        route={selectedRoute}
+        isOpen={selectedRoute !== null}
+        onClose={() => setSelectedRoute(null)}
+      />
+    </>
   );
 }
 
 function RouteCard({
   route,
   exploreLabel,
+  onExplore,
 }: {
   route: { name: string; description: string; image: string };
   exploreLabel: string;
+  onExplore: () => void;
 }) {
   return (
     <motion.div
@@ -138,7 +179,10 @@ function RouteCard({
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
         <h3 className="text-2xl font-bold mb-2">{route.name}</h3>
         <p className="text-white/90 mb-4">{route.description}</p>
-        <button className="flex items-center space-x-2 text-soft-gold hover:text-luxury-gold transition-colors group/btn">
+        <button
+          onClick={onExplore}
+          className="flex items-center space-x-2 text-soft-gold hover:text-luxury-gold transition-colors group/btn"
+        >
           <span>{exploreLabel}</span>
           <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
         </button>

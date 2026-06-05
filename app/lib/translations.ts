@@ -1,3 +1,17 @@
+// Booking links per route — update these when real links are available
+export const bookingLinks = {
+  icacosHalfDay: "https://www.google.com",
+  icacosFullDay: "https://www.google.com",
+  culebraCharter: "https://www.google.com",
+  culebraPremium: "https://www.google.com",
+  viequesCharter: "https://www.google.com",
+  viequesPremium: "https://www.google.com",
+  sunset: "https://www.google.com",
+  palominoHalfDay: "https://www.google.com",
+  palominoFullDay: "https://www.google.com",
+  privateTour: "https://www.google.com",
+};
+
 export const translations = {
   en: {
     nav: {
@@ -18,36 +32,229 @@ export const translations = {
       title: "Discover Our Routes",
       subtitle: "Choose from our curated collection of luxury boat experiences",
       explore: "Explore Route",
+      reserveNow: "Reserve Now",
+      close: "Close",
+      startingAt: "Starting at",
+      includes: "Includes",
+      duration: "Duration",
+      guests: "Guests",
+      addOns: "Add-Ons",
+      addOnsList: [
+        { name: "Cooler stocked with soft drinks", price: "$50" },
+        { name: "Premium beverage package", price: "$150" },
+        { name: "Charcuterie board", price: "$125" },
+        { name: "Drone footage", price: "$150" },
+        { name: "Professional Photography", price: "$250" },
+        { name: "Extra Hour", price: "$150" },
+      ],
       items: [
         {
           name: "Icacos Island",
           description:
             "Crystal clear waters and pristine white sand beaches await you.",
+          packages: [
+            {
+              name: "Half Day Island Escape",
+              duration: "4 Hours",
+              guests: "Up to 6 Guests",
+              price: "$499",
+              bookingKey: "icacosHalfDay",
+              description: "Visit Icacos, Palomino or nearby reefs.",
+              includes: [
+                "USCG Licensed Captain",
+                "Ice & Water",
+                "Snorkeling Equipment",
+                "Floating Mat",
+                "Bluetooth Sound System",
+              ],
+            },
+            {
+              name: "Full Day Island Escape",
+              duration: "6 Hours",
+              guests: "Up to 6 Guests",
+              price: "$599",
+              bookingKey: "icacosFullDay",
+              description: "Explore Icacos, Palomino and nearby cays.",
+              includes: [
+                "Captain & Fuel",
+                "Ice & Water",
+                "Snorkeling Gear",
+                "Floating Mat",
+                "Beach Time & Island Hopping",
+              ],
+            },
+          ],
         },
         {
           name: "Culebra Experience",
           description:
             "Discover the enchanting beauty of Culebra's turquoise paradise.",
+          packages: [
+            {
+              name: "Culebra Private Charter",
+              duration: "Full Day",
+              guests: "Up to 6 Guests",
+              price: "$799",
+              bookingKey: "culebraCharter",
+              description: "Visit Flamenco Beach, Tamarindo Beach and world-class snorkeling spots.",
+              includes: [
+                "Captain",
+                "Fuel",
+                "Ice & Water",
+                "Snorkeling Equipment",
+                "Floating Mat",
+              ],
+            },
+            {
+              name: "Culebra Premium Experience",
+              duration: "Full Day",
+              guests: "Up to 6 Guests",
+              price: "$1,350",
+              bookingKey: "culebraPremium",
+              description: "Extended itinerary with multiple beach and snorkeling stops.",
+              includes: [
+                "Captain",
+                "Fuel",
+                "Ice & Water",
+                "Snorkeling Equipment",
+                "Floating Mat",
+                "Complimentary Soft Drinks",
+              ],
+            },
+          ],
         },
         {
           name: "Vieques Escape",
           description:
             "Explore hidden coves and bioluminescent bays in style.",
+          packages: [
+            {
+              name: "Vieques Private Charter",
+              duration: "Full Day",
+              guests: "Up to 6 Guests",
+              price: "$1,500",
+              bookingKey: "viequesCharter",
+              description: "Discover secluded beaches and crystal-clear waters.",
+              includes: [
+                "Captain",
+                "Fuel",
+                "Ice & Water",
+                "Snorkeling Equipment",
+                "Floating Mat",
+              ],
+            },
+            {
+              name: "Vieques Premium Experience",
+              duration: "Full Day",
+              guests: "Up to 6 Guests",
+              price: "$1,995",
+              bookingKey: "viequesPremium",
+              description: "Premium beach-hopping and snorkeling adventure.",
+              includes: [
+                "Captain",
+                "Fuel",
+                "Ice & Water",
+                "Snorkeling Equipment",
+                "Floating Mat",
+                "Complimentary Soft Drinks",
+              ],
+            },
+          ],
         },
         {
           name: "Sunset Route",
           description:
             "Watch the Caribbean sun paint the sky in golden hues.",
+          packages: [
+            {
+              name: "Sunset Cruise",
+              duration: "3 Hours",
+              guests: "Up to 6 Guests",
+              price: "$399",
+              bookingKey: "sunset",
+              description: "Enjoy Puerto Rico's beautiful sunset from the water.",
+              includes: [
+                "Captain",
+                "Ice & Water",
+                "Music",
+                "Light Snacks",
+              ],
+            },
+          ],
         },
         {
           name: "Private Tropical Tour",
           description:
             "Customized luxury journey through Puerto Rico's hidden gems.",
+          packages: [
+            {
+              name: "Half Day Island Escape",
+              duration: "4 Hours",
+              guests: "Up to 6 Guests",
+              price: "$499",
+              bookingKey: "icacosHalfDay",
+              description: "Visit Icacos, Palomino or nearby reefs.",
+              includes: [
+                "USCG Licensed Captain",
+                "Ice & Water",
+                "Snorkeling Equipment",
+                "Floating Mat",
+                "Bluetooth Sound System",
+              ],
+            },
+            {
+              name: "Full Day Island Escape",
+              duration: "6 Hours",
+              guests: "Up to 6 Guests",
+              price: "$599",
+              bookingKey: "icacosFullDay",
+              description: "Explore Icacos, Palomino and nearby cays.",
+              includes: [
+                "Captain & Fuel",
+                "Ice & Water",
+                "Snorkeling Gear",
+                "Floating Mat",
+                "Beach Time & Island Hopping",
+              ],
+            },
+          ],
         },
         {
           name: "Palomino",
           description:
             "Ride the river to the sea through lush tropical landscapes.",
+          packages: [
+            {
+              name: "Half Day Island Escape",
+              duration: "4 Hours",
+              guests: "Up to 6 Guests",
+              price: "$499",
+              bookingKey: "palominoHalfDay",
+              description: "Visit Icacos, Palomino or nearby reefs.",
+              includes: [
+                "USCG Licensed Captain",
+                "Ice & Water",
+                "Snorkeling Equipment",
+                "Floating Mat",
+                "Bluetooth Sound System",
+              ],
+            },
+            {
+              name: "Full Day Island Escape",
+              duration: "6 Hours",
+              guests: "Up to 6 Guests",
+              price: "$599",
+              bookingKey: "palominoFullDay",
+              description: "Explore Icacos, Palomino and nearby cays.",
+              includes: [
+                "Captain & Fuel",
+                "Ice & Water",
+                "Snorkeling Gear",
+                "Floating Mat",
+                "Beach Time & Island Hopping",
+              ],
+            },
+          ],
         },
       ],
     },
@@ -181,38 +388,231 @@ export const translations = {
     routes: {
       title: "Descubre Nuestras Rutas",
       subtitle:
-        "Elige entre nuestra colecci\u00f3n curada de experiencias de bote de lujo",
+        "Elige entre nuestra colección curada de experiencias de bote de lujo",
       explore: "Explorar Ruta",
+      reserveNow: "Reservar Ahora",
+      close: "Cerrar",
+      startingAt: "Desde",
+      includes: "Incluye",
+      duration: "Duración",
+      guests: "Pasajeros",
+      addOns: "Extras",
+      addOnsList: [
+        { name: "Nevera con refrescos", price: "$50" },
+        { name: "Paquete de bebidas premium", price: "$150" },
+        { name: "Tabla de charcutería", price: "$125" },
+        { name: "Grabación con dron", price: "$150" },
+        { name: "Fotografía profesional", price: "$250" },
+        { name: "Hora adicional", price: "$150" },
+      ],
       items: [
         {
           name: "Isla Icacos",
           description:
             "Aguas cristalinas y playas de arena blanca prístina te esperan.",
+          packages: [
+            {
+              name: "Escape de Medio Día",
+              duration: "4 Horas",
+              guests: "Hasta 6 Pasajeros",
+              price: "$499",
+              bookingKey: "icacosHalfDay",
+              description: "Visita Icacos, Palomino o arrecifes cercanos.",
+              includes: [
+                "Capitán con Licencia USCG",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+                "Sistema de Sonido Bluetooth",
+              ],
+            },
+            {
+              name: "Escape de Día Completo",
+              duration: "6 Horas",
+              guests: "Hasta 6 Pasajeros",
+              price: "$599",
+              bookingKey: "icacosFullDay",
+              description: "Explora Icacos, Palomino y cayos cercanos.",
+              includes: [
+                "Capitán y Combustible",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+                "Tiempo en Playa y Recorrido de Islas",
+              ],
+            },
+          ],
         },
         {
           name: "Experiencia Culebra",
           description:
-            "Descubre la encantadora belleza del para\u00edso turquesa de Culebra.",
+            "Descubre la encantadora belleza del paraíso turquesa de Culebra.",
+          packages: [
+            {
+              name: "Charter Privado a Culebra",
+              duration: "Día Completo",
+              guests: "Hasta 6 Pasajeros",
+              price: "$799",
+              bookingKey: "culebraCharter",
+              description: "Visita Playa Flamenco, Playa Tamarindo y spots de snorkel de clase mundial.",
+              includes: [
+                "Capitán",
+                "Combustible",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+              ],
+            },
+            {
+              name: "Experiencia Premium Culebra",
+              duration: "Día Completo",
+              guests: "Hasta 6 Pasajeros",
+              price: "$1,350",
+              bookingKey: "culebraPremium",
+              description: "Itinerario extendido con múltiples paradas de playa y snorkel.",
+              includes: [
+                "Capitán",
+                "Combustible",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+                "Refrescos de Cortesía",
+              ],
+            },
+          ],
         },
         {
           name: "Escape a Vieques",
           description:
-            "Explora calas escondidas y bah\u00edas bioluminiscentes con estilo.",
+            "Explora calas escondidas y bahías bioluminiscentes con estilo.",
+          packages: [
+            {
+              name: "Charter Privado a Vieques",
+              duration: "Día Completo",
+              guests: "Hasta 6 Pasajeros",
+              price: "$1,500",
+              bookingKey: "viequesCharter",
+              description: "Descubre playas aisladas y aguas cristalinas.",
+              includes: [
+                "Capitán",
+                "Combustible",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+              ],
+            },
+            {
+              name: "Experiencia Premium Vieques",
+              duration: "Día Completo",
+              guests: "Hasta 6 Pasajeros",
+              price: "$1,995",
+              bookingKey: "viequesPremium",
+              description: "Aventura premium de playas y snorkel.",
+              includes: [
+                "Capitán",
+                "Combustible",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+                "Refrescos de Cortesía",
+              ],
+            },
+          ],
         },
         {
           name: "Ruta del Atardecer",
           description:
-            "Observa el sol caribe\u00f1o pintar el cielo en tonos dorados.",
+            "Observa el sol caribeño pintar el cielo en tonos dorados.",
+          packages: [
+            {
+              name: "Crucero al Atardecer",
+              duration: "3 Horas",
+              guests: "Hasta 6 Pasajeros",
+              price: "$399",
+              bookingKey: "sunset",
+              description: "Disfruta del hermoso atardecer de Puerto Rico desde el agua.",
+              includes: [
+                "Capitán",
+                "Hielo y Agua",
+                "Música",
+                "Aperitivos Ligeros",
+              ],
+            },
+          ],
         },
         {
           name: "Tour Tropical Privado",
           description:
             "Viaje de lujo personalizado por las joyas escondidas de Puerto Rico.",
+          packages: [
+            {
+              name: "Escape de Medio Día",
+              duration: "4 Horas",
+              guests: "Hasta 6 Pasajeros",
+              price: "$499",
+              bookingKey: "icacosHalfDay",
+              description: "Visita Icacos, Palomino o arrecifes cercanos.",
+              includes: [
+                "Capitán con Licencia USCG",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+                "Sistema de Sonido Bluetooth",
+              ],
+            },
+            {
+              name: "Escape de Día Completo",
+              duration: "6 Horas",
+              guests: "Hasta 6 Pasajeros",
+              price: "$599",
+              bookingKey: "icacosFullDay",
+              description: "Explora Icacos, Palomino y cayos cercanos.",
+              includes: [
+                "Capitán y Combustible",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+                "Tiempo en Playa y Recorrido de Islas",
+              ],
+            },
+          ],
         },
         {
           name: "Palomino",
           description:
             "Navega el río hasta el mar a través de exuberantes paisajes tropicales.",
+          packages: [
+            {
+              name: "Escape de Medio Día",
+              duration: "4 Horas",
+              guests: "Hasta 6 Pasajeros",
+              price: "$499",
+              bookingKey: "palominoHalfDay",
+              description: "Visita Icacos, Palomino o arrecifes cercanos.",
+              includes: [
+                "Capitán con Licencia USCG",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+                "Sistema de Sonido Bluetooth",
+              ],
+            },
+            {
+              name: "Escape de Día Completo",
+              duration: "6 Horas",
+              guests: "Hasta 6 Pasajeros",
+              price: "$599",
+              bookingKey: "palominoFullDay",
+              description: "Explora Icacos, Palomino y cayos cercanos.",
+              includes: [
+                "Capitán y Combustible",
+                "Hielo y Agua",
+                "Equipo de Snorkel",
+                "Colchoneta Flotante",
+                "Tiempo en Playa y Recorrido de Islas",
+              ],
+            },
+          ],
         },
       ],
     },
