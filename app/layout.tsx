@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "./lib/i18n";
 
@@ -32,6 +33,10 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} antialiased`}>
       <body className="min-h-screen">
         <LanguageProvider>{children}</LanguageProvider>
+        <Script
+          src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

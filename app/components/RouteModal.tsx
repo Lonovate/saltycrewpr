@@ -162,19 +162,17 @@ export function RouteModal({
                       </ul>
                     </div>
 
-                    {/* Reserve Now */}
-                    {/* <a
+                    {/* Reserve Now — FareHarbor Lightframe opens as popup */}
+                    <a
                       href={
                         bookingLinks[
                           pkg.bookingKey as keyof typeof bookingLinks
                         ]
                       }
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="inline-block bg-soft-gold hover:bg-luxury-gold text-ocean-blue font-bold py-3 px-8 rounded-full transition-colors text-center w-full md:w-auto"
                     >
                       {t.routes.reserveNow}
-                    </a> */}
+                    </a>
                   </div>
                 ))}
               </div>

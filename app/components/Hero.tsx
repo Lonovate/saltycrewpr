@@ -41,12 +41,12 @@ export function Hero() {
           {t.hero.subheadline}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={() => scrollToSection("contact")}
+          <a
+            href="https://fareharbor.com/embeds/book/saltycrewpr/?full-items=yes"
             className="px-8 py-4 bg-soft-gold text-white rounded-lg hover:bg-luxury-gold transition-all transform hover:scale-105 shadow-lg text-lg font-medium"
           >
             {t.hero.cta}
-          </button>
+          </a>
           <button
             onClick={() => scrollToSection("routes")}
             className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all border border-white/30 text-lg font-medium"

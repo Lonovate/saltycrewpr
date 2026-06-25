@@ -1,15 +1,15 @@
-// Booking links per route — update these when real links are available
+// FareHarbor Lightframe booking links per route
 export const bookingLinks = {
-  icacosHalfDay: "https://www.google.com",
-  icacosFullDay: "https://www.google.com",
-  culebraCharter: "https://www.google.com",
-  culebraPremium: "https://www.google.com",
-  viequesCharter: "https://www.google.com",
-  viequesPremium: "https://www.google.com",
-  sunset: "https://www.google.com",
-  palominoHalfDay: "https://www.google.com",
-  palominoFullDay: "https://www.google.com",
-  privateTour: "https://www.google.com",
+  icacosHalfDay: "https://fareharbor.com/embeds/book/saltycrewpr/items/741587/?full-items=yes&flow=1660579",
+  icacosFullDay: "https://fareharbor.com/embeds/book/saltycrewpr/items/741587/?full-items=yes&flow=1660579",
+  culebraCharter: "https://fareharbor.com/embeds/book/saltycrewpr/items/741588/?full-items=yes&flow=1660579",
+  culebraPremium: "https://fareharbor.com/embeds/book/saltycrewpr/items/741588/?full-items=yes&flow=1660579",
+  viequesCharter: "https://fareharbor.com/embeds/book/saltycrewpr/items/741589/?full-items=yes&flow=1660579",
+  viequesPremium: "https://fareharbor.com/embeds/book/saltycrewpr/items/741589/?full-items=yes&flow=1660579",
+  sunset: "https://fareharbor.com/embeds/book/saltycrewpr/items/741590/?full-items=yes&flow=1660579",
+  palominoHalfDay: "https://fareharbor.com/embeds/book/saltycrewpr/items/741592/?full-items=yes&flow=1660579",
+  palominoFullDay: "https://fareharbor.com/embeds/book/saltycrewpr/items/741592/?full-items=yes&flow=1660579",
+  privateTour: "https://fareharbor.com/embeds/book/saltycrewpr/items/741591/?full-items=yes&flow=1660579",
 };
 
 export const translations = {
